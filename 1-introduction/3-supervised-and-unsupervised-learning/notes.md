@@ -72,7 +72,7 @@ The learning process often involves **finding implicit patterns in the data**, r
 <br>
 
 ### Variations on paradigm
-* **Supervised**: given a set of feature/label paris, find a rule that predicts the label associated with a previously unseen input.
+* **Supervised**: given a set of feature/label parts, find a rule that predicts the label associated with a previously unseen input.
 * **Unsupervised**: given a set of feature vectors (without labels) group them into "natural clusters" (or create labels for groups)
 
 <br>
