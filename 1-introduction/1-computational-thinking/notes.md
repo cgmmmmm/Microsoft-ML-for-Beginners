@@ -54,4 +54,4 @@ In ***Machine Learning*** however:
 <br>
 
 ### 🔴 This marks the end of Chapter 1.1 of the Microsoft ML for Beginners Course. 🔴
-Chapter 1.2 will discuss about **Unlabelled Data and Labelled Data**.
+Chapter 1.2 will discuss about **Unlabeled Data and Labeled Data**.
