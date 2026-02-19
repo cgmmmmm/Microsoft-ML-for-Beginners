@@ -50,7 +50,7 @@ Before you can effectively **cluster** (unsupervised learning), and **classify**
 </p>
 
 Features never fully describe the situation.
-> "All models are wrong, but some are wrong, but some are useful." **— George Box**
+> "All models are wrong, but some are useful." **— George Box**
 
 <br>
 
