@@ -91,19 +91,19 @@ def minkowski_dist(x, y, p):
     return (dist)**(1/p)
 ``` 
 
-* x and y represents the pair of animals:
-    * x can be ( rattlesnake or boa_constrictor or dart_frog )
-    * y can be ( rattlesnake or boa_constrictor or dart_frog )
+* `x` and `y` represents the pair of animals:
+    * `x` can be ( `rattlesnake` or `boa_constrictor` or `dart_frog` )
+    * `y` can be ( `rattlesnake` or `boa_constrictor` or `dart_frog` )
 
-* p represents the value determined by:
-    * Manhattan Distance - *$1$*
-    * Euclidean Distance - *$2$*
+* `p` represents the value determined by:
+    * Manhattan Distance - *1*
+    * Euclidean Distance - *2*
 
 #### NOTE: The smaller the value, the greater the similarity, indicating the pair of animals are closely mapped within the multidimensional feature space.
 
 <br>
 
-### Using Euclidean Distance $ (p = 2) $
+### Using Euclidean Distance (`p` = 2) 
 #### Distance between Rattlesnake and Boa Constrictor
 ```python
 # Computed distance between rattlesnake and boa constrictor
