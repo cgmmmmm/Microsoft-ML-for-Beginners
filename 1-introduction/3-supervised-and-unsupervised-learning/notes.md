@@ -124,7 +124,7 @@ Ideal for exploratory data analysis, customer segmentation, and anomaly detectio
 
 <br>
 
-* Key Aspects of Supervised Learning:
+* Key Aspects of Unsupervised Learning:
     * **Unlabeled Data**: The algorithm is provided with raw data (x) and no corresponding output (y).
     * **Goal**: To model the underlying structure or distribution in the data to learn more about it.
 
