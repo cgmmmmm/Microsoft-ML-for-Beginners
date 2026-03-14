@@ -238,4 +238,4 @@ What this says: Now, an Alligator is more similar to Rattlesnake and Boa Constri
 ---
 
 ### 🔴 This marks the end of Chapter 1.5 of the Microsoft ML for Beginners Course. 🔴
-Chapter 1.6 will discuss about **Clustering and Classification**.
+Chapter 1.6 will discuss about **Techniques of Machine Learning**.
