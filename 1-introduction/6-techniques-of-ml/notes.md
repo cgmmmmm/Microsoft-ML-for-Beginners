@@ -138,7 +138,7 @@ The evaluation phase usually involves a few key concepts:
 
 ### 5. Hyperparameter Tuning
 
-If your evaluation in Step 4: Training, reveals that your model isn't performing as well as you'd like (for example, it is overfitting or underfitting), you don't necessarily need to throw it away. Instead, you can improve it by **adjusting its hyperparameters (Step 5)**.
+If your evaluation reveals that your model isn't performing as well as you'd like (for example, it is overfitting or underfitting), you don't necessarily need to throw it away. Instead, you can improve it by **adjusting its hyperparameters (Step 5)**.
 
 Some algorithms contain hyperparameters, which are settings that control key aspects of their inner workings. Choosing good hyperparameters is important because they can make a big difference in your results.
 
