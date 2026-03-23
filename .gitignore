@@ -11,3 +11,5 @@
 
 # Built-in Terminals
 .vscode/*.log
+
+.venv/
