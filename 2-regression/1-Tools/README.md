@@ -1,6 +1,6 @@
 # Get started with Python and Scikit-learn for regression models
 
-![Summary of regressions in a sketchnote](../../sketchnotes/ml-regression.png)
+![Summary of regressions in a sketchnote](./images/ml-regression.png)
 
 > Sketchnote by [Tomomi Imura](https://www.twitter.com/girlie_mac)
 
