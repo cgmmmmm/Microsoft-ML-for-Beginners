@@ -313,3 +313,126 @@ The output:
 2. **The "Line of Best Fit"**: The blue line does exactly what Linear Regression is supposed to do. It cuts straight through the "middle" or "center of mass" of all the black dots, trying its best to minimize the distance between itself and every single point.
 
 3. **High Variance**: While the model captures the general upward trend, the black dots are heavily scattered around the line. Very few dots actually touch the blue line. This tells us that while BMI is a good predictor of disease progression, it is not the *only* factor. If BMI were a perfect predictor, all the black dots would form a perfectly straight line themselves.
+
+<br>
+
+---
+
+### Evaluation (Mathematical Metrics)
+
+While the scatter plot gives us a great visual understanding of our model, we also need hard mathematical metrics to quantify exactly how accurate our line of best fit really is. We will evaluate our model using Mean Squared Error (MSE) and the R-squared score.
+
+```python
+# Evaluation (Mathematical Metrics)
+
+from sklearn.metrics import mean_squared_error, r2_score
+
+# Calculate the MSE
+mse = mean_squared_error(y_test, y_pred)
+
+# Calculate R-squared score
+r2 = r2_score(y_test, y_pred)
+
+print(f"Mean Squared Error (MSE): {mse:.2f}")
+print(f"R-squared (R2) Score: {r2:.2f}")
+```
+
+Output:
+```
+Mean Squared Error (MSE): 3807.80
+R-squared (R2) Score: 0.32
+```
+
+<br>
+
+#### Mathematical Formula for Mean Squared Error (MSE)
+
+$$
+\begin{gathered}
+{\Large MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2} \\
+\\
+\begin{aligned}
+&\text{where:} \\
+&n = \text{total number of samples} \\
+&y_i = \text{actual true value} \\
+&\hat{y}_i = \text{model's predicted value} \\
+&\textstyle \sum = \text{sum of squared differences}
+\end{aligned}
+\end{gathered}
+$$
+
+**Mean Squared Error (MSE)** measures the average squared difference between the model's predicted answers (`y_pred`) and the actual ground-truth answers (`y_test`). Imagine drawing a vertical line from every single black dot on the scatter plot directly to the blue line. The MSE measures the length of all those lines, squares them (to remove negative numbers), and averages them out. An MSE of `0.0` would mean every single dot landed perfectly on the blue line. Because the scatter plot showed dots spread far away from the line, we expect the MSE to be a fairly large number.
+
+<br>
+
+#### Mathematical Formula for R-squared  (R²) Score
+
+$$
+\begin{gathered}
+{\Large R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2} } \\
+\\
+\begin{aligned}
+&\text{where:} \\
+&\text{Numerator} = \text{Model's squared errors} \\
+&\text{Denominator} = \text{Baseline (average) squared errors} \\
+&R^2 = \text{Perfection left after error subtraction}
+\end{aligned}
+\end{gathered}
+$$
+
+**R-squared (R²) Score** aka. Coefficient of Determination, this score tells us what percentage of the disease progression can be explicitly explained by the patient's BMI. The score usually ranges from `0.0` to `1.0` (0% to 100%).
+
+* A score of `1.0` means BMI perfectly predicts disease progression every single time without fail. 
+
+* A score of `0.0` means BMI is completely useless and has no relationship to disease progression whatsoever.
+
+Higher is better. A typical R² score for a single-variable medical dataset like this will likely be relatively low (often between `0.2` to `0.4`). This mathematically proves that BMI is a contributing factor, but it does not tell the whole story on its own.
+
+<br>
+<br>
+
+---
+
+### Full Code for this Project
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn import datasets, linear_model, model_selection
+from sklearn.metrics import mean_squared_error, r2_score
+
+X, y = datasets.load_diabetes(return_X_y=True)
+
+X = X[:, 2]
+
+X = X.reshape((-1, 1))
+
+X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_size=0.33)
+
+model = linear_model.LinearRegression()
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+
+plt.scatter(X_test, y_test, color="black")
+plt.plot(X_test, y_pred, color="blue", linewidth=3)
+plt.xlabel("Scaled BMIs")
+plt.ylabel("Disease Progression")
+plt.title("Linear Regression: Disease Progression vs BMI")
+plt.plot()
+
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+
+print(f"Mean Squared Error (MSE): {mse:.2f}")
+print(f"R-squared (R2) Score: {r2:.2f}")
+```
+
+Output:
+```
+Mean Squared Error (MSE): 4226.56
+R-squared (R2) Score: 0.29
+```
+<p align="center">
+  <img src="images/output.png" alt="Animal Data">
+</p>
